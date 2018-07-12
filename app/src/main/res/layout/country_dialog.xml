@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@drawable/rectangle_white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:background="@drawable/dialog_top_back"
+            android:gravity="center">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center">
+
+                <com.mxi.buildsterapp.widget.MyTextviewBold
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/select_country"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:textColor="@color/color_white"
+                    android:textStyle="bold"/>
+
+                <ImageView
+                    android:id="@+id/iv_close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_invite"
+                    android:layout_gravity="center|right"
+                    android:paddingRight="20dp"
+                    android:tint="@color/color_white"/>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="5dp">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_country_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </android.support.v7.widget.RecyclerView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

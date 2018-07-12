@@ -1,0 +1,146 @@
+<resources>
+    <string name="app_name">BuildsterApp</string>
+
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et </string>
+
+    <string name="no_internet">No Internet Connection</string>
+    <string name="ws_error">Ooops! Something went wrong</string>
+
+    <!--Setting-->
+    <string name="save">Save</string>
+    <string name="pro_setting">Project setting</string>
+
+    <!--Login Screen-->
+    <string name="sign_in">Sign in</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="forgot_password_2">Forgot Password</string>
+    <string name="btn_login">LOGIN</string>
+    <string name="d_account">Don\'t have an account?</string>
+    <string name="email_vali">Please enter valid email</string>
+    <string name="pass_vali">Please enter password</string>
+
+    <!--My project fragment-->
+    <string name="search_here">Search projects</string>
+    <string name="search_here2">Search screen and worker</string>
+    <string name="search_here3">Search tradeworker</string>
+    <string name="search_here4">Search item</string>
+    <string name="search_here5">Search message</string>
+
+    <!--Logout Dialog-->
+    <string name="logout_info">Are you sure you want to logout?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="delete">Delete</string>
+    <string name="delete_project">Are you sure you want delete this project?</string>
+    <string name="delete_screen">Are you sure you want delete this screen?</string>
+
+    <string name="enter_email">Enter email</string>
+    <string name="close">CLOSE</string>
+    <string name="close2">Close</string>
+    <string name="submit">SUBMIT</string>
+    <string name="submit2">Submit</string>
+
+    <!--Country dialog-->
+    <string name="select_country">Select country</string>
+
+    <!--Change password dialog-->
+    <string name="current_pass">Current Password</string>
+    <string name="new_pass">New Password</string>
+    <string name="confirm_pass">Confirm Password</string>
+    <string name="current_vali">Please enter current password</string>
+    <string name="newpass_vali">Please enter new password</string>
+    <string name="c_newpass_vali">Please enter confirm new password</string>
+
+    <!--Add new project-->
+    <string name="upload_p_photo">Upload Project Photo</string>
+    <string name="project_name">Project name</string>
+    <string name="project_address">Project address</string>
+    <string name="project_manager">Project manager</string>
+    <string name="cmp_name">Company name</string>
+    <string name="next">Next</string>
+    <string name="submit_project">Submit Project</string>
+
+    <string name="pname_vali">Please enter project name</string>
+    <string name="paddress_vali">Please enter project address</string>
+    <string name="pmanager_vali">Please enter manager name</string>
+    <string name="pcompany_vali">Please enter company name</string>
+
+    <!--Upload PDF-->
+    <string name="p_title">Project title</string>
+    <string name="upload_pdf">Upload PDF</string>
+    <string name="tap">TAP HERE</string>
+    <string name="no_pdf_screen">No PDF Screen</string>
+
+    <!--Action item-->
+    <string name="action_item">Action item</string>
+
+    <!--Message screen-->
+    <string name="message">Message</string>
+
+    <!--Signup Screen-->
+    <string name="sign_up">Sign up</string>
+    <string name="f_name">First name</string>
+    <string name="l_name">Last name</string>
+    <string name="c_password">Confirm password</string>
+    <string name="have_account">Already have an account? SIGN IN</string>
+    <string name="fname_vali">Please enter firstname</string>
+    <string name="lname_vali">Please enter lastname</string>
+    <string name="c_pass_vali1">Please enter confirm password</string>
+    <string name="c_pass_vali2">Password not match</string>
+
+    <!--Home Menu Screen-->
+    <string name="home">Home</string>
+    <string name="my_profile">My Profile</string>
+    <string name="a_new_project">Add New Project</string>
+    <string name="change_password">Change Password</string>
+    <string name="logout">LOGOUT</string>
+
+    <!--Invite tradeworker-->
+    <string name="invite_tradeworker">Invite tradeworker</string>
+    <string name="to">TO :</string>
+    <string name="email_or">Email or Multiple emails</string>
+    <string name="message_optional">Message(optional)</string>
+    <string name="add_message_optional">Add Message (optional)</string>
+
+    <string name="title_home">Profile</string>
+    <string name="title_videos">Patient List</string>
+    <string name="title_coupens">Articles</string>
+    <string name="title_offers">Questionnaries</string>
+
+    <string name="my_project">My\nProjects</string>
+    <string name="assigned_project">Assigned\nProjects</string>
+
+    <string-array name="titles">
+        <item>My\nProjects</item>
+        <item>Assigned\nProjects</item>
+    </string-array>
+
+    <!-- navigation drawer item labels  -->
+    <string-array name="nav_drawer_labels">
+        <item>@string/title_home</item>
+        <item>@string/title_videos</item>
+        <item>@string/title_coupens</item>
+        <item>@string/title_offers</item>
+
+    </string-array>
+
+
+    <!--Edit Profile-->
+    <string name="edit_profile">Edit profile</string>
+    <string name="contact_no">Contact number</string>
+    <string name="address_1">Address line1</string>
+    <string name="address_2">Address line2</string>
+    <string name="city">City</string>
+    <string name="country">Country</string>
+    <string name="save_changes">Save Change</string>
+    <string name="cancel">Cancel</string>
+    <string name="contact_vali">Please enter contact number</string>
+    <string name="address_vali">Please enter address</string>
+    <string name="city_vali">Please enter city</string>
+
+</resources>

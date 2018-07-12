@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#006CA6</color>
+    <color name="colorPrimaryDark">#006CA6</color>
+    <color name="colorAccent">#006CA6</color>
+
+    <color name="color_blue">#006CA6</color>
+    <color name="color_white">#FFFFFF</color>
+
+    <color name="start_btn_grad">#C5EBFC</color>
+    <color name="end_btn_grad">#8ED8F9</color>
+
+    <color name="grey_text">#84AAC9</color>
+    <color name="grey">#bab9b9</color>
+
+    <color name="yellow_circle">#DFB432</color>
+    <color name="red_circle">#FF001B</color>
+
+    <color name="black">#000000</color>
+
+</resources>

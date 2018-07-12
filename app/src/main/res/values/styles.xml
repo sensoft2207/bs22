@@ -1,0 +1,23 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+
+    <style name="home_theme" parent="Theme.AppCompat.NoActionBar">
+
+
+        <item name="android:textColorPrimary">@color/color_blue</item>
+
+        <item name="actionMenuTextColor">@color/color_blue</item>
+
+        <item name="android:textColorSecondary">@color/color_blue</item>
+
+    </style>
+
+</resources>

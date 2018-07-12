@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_above="@+id/ln_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            app:cardElevation="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:gravity="center|left"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_back"
+                android:tint="@color/color_blue"/>
+
+            <com.mxi.buildsterapp.widget.MyTextviewBold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/edit_profile"
+                android:textSize="20sp"
+                android:paddingLeft="15dp"
+                android:textColor="@color/color_blue"/>
+
+        </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="10dp">
+
+                    <ImageView
+                        android:id="@+id/iv_profile_pic"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/ic_add_profile_2"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="20dp">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="30dp"
+                        android:paddingRight="30dp"
+                        android:textColorHint="@color/color_blue">
+
+                        <com.mxi.buildsterapp.widget.MyEditText
+                            android:id="@+id/ed_firstname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/f_name"
+                            android:textColorHint="@color/color_blue"
+                            android:textSize="14sp"
+                            android:textColor="@color/color_blue"
+                            android:singleLine="true"
+                            android:paddingBottom="20dp"
+                            android:inputType="textCapSentences|text"/>
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="30dp"
+                        android:paddingRight="30dp"
+                        android:textColorHint="@color/color_blue">
+
+                        <com.mxi.buildsterapp.widget.MyEditText
+                            android:id="@+id/ed_lastname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/l_name"
+                            android:textColorHint="@color/color_blue"
+                            android:textSize="14sp"
+                            android:textColor="@color/color_blue"
+                            android:singleLine="true"
+                            android:paddingBottom="20dp"
+                            android:inputType="textCapSentences|text"/>
+
+                    </android.support.design.widget.TextInputLayout>
+
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="30dp"
+                        android:paddingRight="30dp"
+                        android:textColorHint="@color/color_blue">
+
+                        <com.mxi.buildsterapp.widget.MyEditText
+                            android:id="@+id/ed_contact_number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/contact_no"
+                            android:textColorHint="@color/color_blue"
+                            android:textSize="14sp"
+                            android:textColor="@color/color_blue"
+                            android:singleLine="true"
+                            android:paddingBottom="20dp"
+                            android:inputType="textCapSentences|number"/>
+
+                    </android.support.design.widget.TextInputLayout>
+
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="30dp"
+                        android:paddingRight="30dp"
+                        android:textColorHint="@color/color_blue">
+
+                        <com.mxi.buildsterapp.widget.MyEditText
+                            android:id="@+id/ed_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/email"
+                            android:textColorHint="@color/color_blue"
+                            android:textSize="14sp"
+                            android:textColor="@color/color_blue"
+                            android:singleLine="true"
+                            android:paddingBottom="20dp"
+                            android:inputType="textCapSentences|textEmailAddress"/>
+
+                    </android.support.design.widget.TextInputLayout>
+
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="30dp"
+                        android:paddingRight="30dp"
+                        android:textColorHint="@color/color_blue">
+
+                        <com.mxi.buildsterapp.widget.MyEditText
+                            android:id="@+id/ed_address1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/address_1"
+                            android:textColorHint="@color/color_blue"
+                            android:textSize="14sp"
+                            android:textColor="@color/color_blue"
+                            android:singleLine="true"
+                            android:paddingBottom="20dp"
+                            android:inputType="textCapSentences|text"/>
+
+                    </android.support.design.widget.TextInputLayout>
+
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="30dp"
+                        android:paddingRight="30dp"
+                        android:textColorHint="@color/color_blue">
+
+                        <com.mxi.buildsterapp.widget.MyEditText
+                            android:id="@+id/ed_address2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/address_2"
+                            android:textColorHint="@color/color_blue"
+                            android:textSize="14sp"
+                            android:textColor="@color/color_blue"
+                            android:singleLine="true"
+                            android:paddingBottom="20dp"
+                            android:inputType="textCapSentences|text"/>
+
+                    </android.support.design.widget.TextInputLayout>
+
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="30dp"
+                        android:paddingRight="30dp"
+                        android:textColorHint="@color/color_blue">
+
+                        <com.mxi.buildsterapp.widget.MyEditText
+                            android:id="@+id/ed_city"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/city"
+                            android:textColorHint="@color/color_blue"
+                            android:textSize="14sp"
+                            android:singleLine="true"
+                            android:paddingBottom="20dp"
+                            android:inputType="textCapSentences|text"/>
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="30dp"
+                            android:paddingRight="30dp"
+                            android:textColorHint="@color/color_blue"
+                            app:hintEnabled="false">
+
+                            <com.mxi.buildsterapp.widget.MyEditText
+                                android:id="@+id/ed_country"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/country"
+                                android:textColorHint="@color/color_blue"
+                                android:textSize="14sp"
+                                android:textColor="@color/color_blue"
+                                android:editable="false"
+                                android:focusable="false"
+                                android:paddingBottom="20dp"
+                                android:inputType="none"/>
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center|right"
+                            android:paddingRight="35dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_drop_down"/>
+
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+
+    </LinearLayout>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/ln_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:cardElevation="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:paddingLeft="35dp"
+                android:paddingRight="35dp"
+                android:gravity="center">
+
+                <com.mxi.buildsterapp.widget.MyButton2
+                    android:id="@+id/btn_save_changes"
+                    android:layout_width="match_parent"
+                    android:layout_height="37dp"
+                    android:background="@drawable/btn_back_two"
+                    android:text="@string/save_changes"
+                    android:textColor="@color/color_white"
+                    android:textSize="15sp"
+                    android:textAllCaps="false"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:paddingLeft="35dp"
+                android:paddingRight="35dp"
+                android:gravity="center">
+
+                <com.mxi.buildsterapp.widget.MyButton2
+                    android:id="@+id/btn_cancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="37dp"
+                    android:background="@drawable/btn_back_two"
+                    android:text="@string/cancel"
+                    android:textColor="@color/color_white"
+                    android:textSize="15sp"
+                    android:textAllCaps="false"/>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>
