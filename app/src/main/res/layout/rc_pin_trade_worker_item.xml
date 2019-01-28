@@ -1,35 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    android:layout_height="100dp"
+    android:layout_height="130dp"
     android:gravity="center">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_weight="2"
-        android:padding="8dp"
         android:orientation="vertical"
+        android:padding="8dp"
         android:gravity="center">
 
         <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_width="55dp"
+            android:layout_height="55dp">
+
 
             <de.hdodenhof.circleimageview.CircleImageView
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/iv_worker_pic"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/student"
-                app:civ_border_width="2dp"
-                app:civ_border_color="@color/color_blue"/>
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/student"/>
 
             <ImageView
                 android:id="@+id/iv_pin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"/>
+
+            <ProgressBar
+                android:id="@+id/progress"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible"
+                android:padding="15dp"/>
+
 
         </FrameLayout>
 
@@ -39,6 +45,8 @@
             android:layout_height="wrap_content"
             android:text="Invite"
             android:gravity="center"
+            android:textSize="12sp"
+            android:paddingTop="5dp"
             android:textColor="@color/color_blue"/>
 
     </LinearLayout>

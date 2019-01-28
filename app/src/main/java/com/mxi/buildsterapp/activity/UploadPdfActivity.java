@@ -6,17 +6,21 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.pdf.PdfRenderer;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.ParcelFileDescriptor;
+import android.provider.DocumentsContract;
+import android.provider.MediaStore;
 import android.provider.OpenableColumns;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.provider.DocumentFile;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.util.Log;
@@ -35,17 +39,22 @@ import com.mxi.buildsterapp.model.ImagePdf;
 import com.mxi.buildsterapp.utils.RealPathUtil;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.net.URI;
 import java.util.ArrayList;
 
 public class UploadPdfActivity extends AppCompatActivity {
 
     CommanClass cc;
 
+    String projectname, projectaddress, companyname, selectedImagePath;
+
     ImageView iv_back;
 
     Button btn_next;
 
-    TextView tv_pdf_name,tv_no_pdf;
+    TextView tv_pdf_name, tv_no_pdf;
 
     LinearLayout ln_pdf_select;
 
@@ -76,11 +85,18 @@ public class UploadPdfActivity extends AppCompatActivity {
 
         cc = new CommanClass(this);
 
+        projectname = getIntent().getStringExtra("projectname");
+        projectaddress = getIntent().getStringExtra("projectaddress");
+        companyname = getIntent().getStringExtra("companyname");
+//        selectedImagePath = getIntent().getStringExtra("selectedImagePath");
+
+        Log.e("@@project_name", projectname);
+
         requestStoragePermission();
 
         bitmapsFinal = new ArrayList<>();
 
-        iv_back = (ImageView)findViewById(R.id.iv_back);
+        iv_back = (ImageView) findViewById(R.id.iv_back);
         ln_pdf_select = (LinearLayout) findViewById(R.id.ln_pdf_select);
 
         ln_bottom = (CardView) findViewById(R.id.ln_bottom);
@@ -108,8 +124,10 @@ public class UploadPdfActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                Intent intentAddNew = new Intent(UploadPdfActivity.this, AddNewProjectActivity.class);
+                startActivity(intentAddNew);
+                finish();
                 overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
-                onBackPressed();
             }
         });
 
@@ -125,16 +143,20 @@ public class UploadPdfActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (gPdfAdapter.getCheckedItems().isEmpty() ){
+                if (gPdfAdapter.getCheckedItems().isEmpty()) {
 
                     cc.showToast("Please select screen first");
 
 
-                }else {
+                } else {
 
                     bitmapsFinal = gPdfAdapter.getCheckedItems();
 
-                    Intent intentViewScreen = new Intent(UploadPdfActivity.this,ViewPdfScreenActivity.class);
+                    Intent intentViewScreen = new Intent(UploadPdfActivity.this, ViewPdfScreenActivity.class);
+                    intentViewScreen.putExtra("projectname", projectname);
+                    intentViewScreen.putExtra("projectaddress", projectaddress);
+                    intentViewScreen.putExtra("companyname", companyname);
+//                    intentViewScreen.putExtra("selectedImagePath", selectedImagePath);
                     startActivity(intentViewScreen);
                     overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
 
@@ -164,17 +186,66 @@ public class UploadPdfActivity extends AppCompatActivity {
 
             String p = String.valueOf(filePath);
 
-            if (p.startsWith("content://com.google.android.apps.docs.storage")){
+            if (p.startsWith("content://com.google.android.apps.docs.storage")) {
 
                 cc.showToast("Pdf Not Supported");
 
+               /* InputStream input;
+                try {
+                    input = getApplicationContext().getContentResolver().openInputStream(Uri.parse(p));
+                    
+
+
+                } catch (FileNotFoundException e1) {
+
+                }
+*/
+             /*  *//* cc.showToast("Pdf Not Supported");
+
                 ln_bottom.setVisibility(View.GONE);
                 tv_no_pdf.setVisibility(View.VISIBLE);
-                grid_pdf_screen.setVisibility(View.INVISIBLE);
+                grid_pdf_screen.setVisibility(View.INVISIBLE);*//*
 
-            }else {
+                DocumentFile df = DocumentFile.fromSingleUri(getApplicationContext(),filePath);
 
-                String path = RealPathUtil.getRealPath(getApplicationContext(),filePath);
+//                String path = String.valueOf(df.getUri());
+
+                try {
+                    String  path = String.valueOf(getContentResolver().openInputStream(filePath));
+
+                    pdfToBitmap(path);
+
+                    Log.e("@@GoogleDrive", String.valueOf(path));
+
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+
+
+                String uriString = filePath.toString();
+                File myFile = new File(uriString);
+                String pathh = myFile.getAbsolutePath();
+                String displayName = null;
+
+                if (uriString.startsWith("content://")) {
+                    Cursor cursor = null;
+                    try {
+                        cursor = getContentResolver().query(filePath, null, null, null, null);
+                        if (cursor != null && cursor.moveToFirst()) {
+                            displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME));
+                            tv_pdf_name.setText(displayName);
+                        }
+                    } finally {
+                        cursor.close();
+                    }
+                } else if (uriString.startsWith("file://")) {
+                    displayName = myFile.getName();
+
+                }*/
+
+            } else {
+
+                String path = RealPathUtil.getRealPath(getApplicationContext(), filePath);
 
                 pdfToBitmap(path);
 
@@ -203,6 +274,8 @@ public class UploadPdfActivity extends AppCompatActivity {
 
         }
     }
+
+
 
     private ArrayList<ImagePdf> pdfToBitmap(final String pdfFile) {
         bitmaps = new ArrayList<>();
@@ -235,13 +308,12 @@ public class UploadPdfActivity extends AppCompatActivity {
 
                         page.render(bitmap, null, null, PdfRenderer.Page.RENDER_MODE_FOR_DISPLAY);
 
-                        bitmap = getResizedBitmap(bitmap,400);
+                        bitmap = getResizedBitmap(bitmap, 400);
 
 
                         im.setBim(bitmap);
 
                         bitmaps.add(im);
-
 
 
                         // close the page
@@ -261,7 +333,7 @@ public class UploadPdfActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         dialog.dismiss();
-                        gPdfAdapter = new GridViewAdapter(getApplicationContext(),bitmaps);
+                        gPdfAdapter = new GridViewAdapter(getApplicationContext(), bitmaps);
                         grid_pdf_screen.setAdapter(gPdfAdapter);
 
                         tv_no_pdf.setVisibility(View.INVISIBLE);
@@ -280,7 +352,7 @@ public class UploadPdfActivity extends AppCompatActivity {
         int width = image.getWidth();
         int height = image.getHeight();
 
-        float bitmapRatio = (float)width / (float) height;
+        float bitmapRatio = (float) width / (float) height;
         if (bitmapRatio > 1) {
             width = maxSize;
             height = (int) (width / bitmapRatio);
@@ -335,6 +407,10 @@ public class UploadPdfActivity extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
 
+        Intent intentAddNew = new Intent(UploadPdfActivity.this, AddNewProjectActivity.class);
+//        intentAddNew.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intentAddNew);
+        finish();
         overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
     }
 }

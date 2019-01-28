@@ -13,9 +13,17 @@
     <color name="grey_text">#84AAC9</color>
     <color name="grey">#bab9b9</color>
 
+    <color name="green_circle">#168e13</color>
     <color name="yellow_circle">#DFB432</color>
     <color name="red_circle">#FF001B</color>
 
     <color name="black">#000000</color>
+
+    <color name="dem">#D7DCDE</color>
+
+    <color name="lightgray">#e7e7e7</color>
+    <color name="dialog_text">#8C8C8C</color>
+
+    <color name="colorTransparent">#00000000</color>
 
 </resources>

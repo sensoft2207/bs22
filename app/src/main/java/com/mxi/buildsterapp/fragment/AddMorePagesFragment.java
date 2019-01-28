@@ -51,7 +51,7 @@ public class AddMorePagesFragment extends Fragment {
 
     Button btn_next;
 
-    TextView tv_pdf_name,tv_no_pdf;
+    TextView tv_pdf_name,tv_no_pdf,tv_project_name;
 
     LinearLayout ln_pdf_select;
 
@@ -93,6 +93,9 @@ public class AddMorePagesFragment extends Fragment {
         tv_pdf_name = (TextView)rootView.findViewById(R.id.tv_pdf_name);
         tv_no_pdf = (TextView)rootView.findViewById(R.id.tv_no_pdf);
 
+        tv_project_name = (TextView)rootView.findViewById(R.id.tv_project_name);
+
+        tv_project_name.setText(cc.loadPrefString("project_name_main"));
 
         btn_next = (Button)rootView.findViewById(R.id.btn_next);
 

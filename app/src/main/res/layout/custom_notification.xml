@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingTop="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp">
+
+                <com.mxi.buildsterapp.widget.MyTextviewLight
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Buildster"
+                    android:gravity="center"
+                    android:textSize="13sp"
+                    android:textColor="@color/black"/>
+
+                <com.mxi.buildsterapp.widget.MyTextviewLight
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Buildster"
+                    android:gravity="center"
+                    android:textSize="13sp"
+                    android:textColor="@color/black"
+                    android:layout_alignParentRight="true"/>
+
+                <com.mxi.buildsterapp.widget.MyTextviewLight
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Project - 627 14th street"
+                    android:gravity="center"
+                    android:textSize="13sp"
+                    android:textColor="@color/black"
+                    android:layout_centerInParent="true"/>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/imgbanner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="8"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.mxi.buildsterapp.widget.MyTextviewBold
+                        android:id="@+id/tv_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="New Pin"
+                        android:gravity="center"
+                        android:textSize="13sp"
+                        android:textColor="@color/black"
+                        android:layout_alignParentLeft="true"/>
+
+                    <com.mxi.buildsterapp.widget.MyTextviewLight
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Main Floor"
+                        android:gravity="center"
+                        android:textSize="13sp"
+                        android:textColor="@color/black"
+                        android:layout_alignParentRight="true"
+                        android:paddingRight="5dp"/>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.mxi.buildsterapp.widget.MyTextviewLight
+                        android:id="@+id/tv_message"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="New Pin"
+                        android:gravity="center"
+                        android:textSize="13sp"
+                        android:textColor="@color/black"
+                        android:paddingTop="5dp"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

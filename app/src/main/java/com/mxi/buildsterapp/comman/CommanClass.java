@@ -25,8 +25,10 @@ public class CommanClass {
     public CommanClass(Context context) {
         this._context = context;
 
-        pref = _context.getSharedPreferences("BuildsterApp",
+        pref = _context.getSharedPreferences("BuildsterAppChange",
                 _context.MODE_PRIVATE);
+
+
     }
 
     public boolean isConnectingToInternet() {
@@ -61,6 +63,14 @@ public class CommanClass {
         editor.commit();
     }
 
+
+    public void removePref(String key) {
+        // TODO Auto-generated method stub
+        SharedPreferences.Editor editor = pref.edit();
+        editor.remove(key);
+        editor.commit();
+    }
+
     public void savePrefBoolean(String key, Boolean value) {
         // TODO Auto-generated method stub
         SharedPreferences.Editor editor = pref.edit();
@@ -79,6 +89,21 @@ public class CommanClass {
         boolean isbool = pref.getBoolean(key, false);
         return isbool;
     }
+
+    public void savePrefInt(String key, int value) {
+        // TODO Auto-generated method stub
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putInt(key, value);
+        editor.commit();
+    }
+
+    //REtrieve String data from SharedPreferences
+    public int loadPrefInt(String key) {
+        // TODO Auto-generated method stub
+        int strSaved = pref.getInt(key, 0);
+        return strSaved;
+    }
+
 
     public void logoutapp() {
         // TODO Auto-generated method stub

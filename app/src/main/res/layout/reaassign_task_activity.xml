@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_above="@+id/ln_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            app:cardElevation="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:gravity="center|left"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp">
+
+                <ImageView
+                    android:id="@+id/iv_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_back"
+                    android:tint="@color/color_blue" />
+
+                <com.mxi.buildsterapp.widget.MyTextviewBold
+                    android:id="@+id/tv_screen_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Re-assign Action"
+                    android:textSize="20sp"
+                    android:paddingLeft="15dp"
+                    android:textColor="@color/color_blue" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.mxi.buildsterapp.widget.MyTextviewBold
+                        android:id="@+id/tv_recipent_validation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Recipient is required. you must click on any tradeworker from below"
+                        android:textColor="#cf0000"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="20dp"
+                        android:visibility="gone"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:paddingTop="5dp">
+
+
+                    <LinearLayout
+                        android:id="@+id/ln_invite_visibility"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:padding="8dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:id="@+id/iv_invite"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:src="@drawable/plus"
+                            app:civ_border_width="2dp"
+                            app:civ_border_color="@color/color_blue"/>
+
+                        <com.mxi.buildsterapp.widget.MyTextviewLight
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Invite"
+                            android:gravity="center"
+                            android:paddingTop="5dp"
+                            android:textSize="12sp"
+                            android:textColor="@color/color_blue"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="7"
+                        android:gravity="center">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/rc_trade_detail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:visibility="invisible"/>
+
+                            <LinearLayout
+                                android:id="@+id/ln_no_worker"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:visibility="invisible">
+
+                                <com.mxi.buildsterapp.widget.MyTextviewLight
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Click the Invite button to add people to your project"
+                                    android:gravity="center"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/color_blue"/>
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center">
+
+                                <ProgressBar
+                                    android:id="@+id/progress"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:visibility="visible"
+                                    android:padding="25dp"/>
+
+                            </LinearLayout>
+
+
+
+                        </FrameLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.mxi.buildsterapp.widget.MyTextviewBold
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Original Recipeint"
+                        android:textColor="@color/color_blue"
+                        android:paddingTop="10dp"
+                        android:paddingLeft="20dp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="center|top"
+                        android:paddingTop="15dp">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:id="@+id/iv_original_re"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:src="@drawable/student"
+                            app:civ_border_width="2dp"
+                            app:civ_border_color="@color/color_blue"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="7">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_gravity="center">
+
+                            <com.mxi.buildsterapp.widget.MyTextviewBold
+                                android:id="@+id/tv_original_re"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Jatin Patel"
+                                android:textColor="@color/black"/>
+
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.mxi.buildsterapp.widget.MyTextviewBold
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Set New Recipeint"
+                        android:textColor="@color/color_blue"
+                        android:paddingTop="10dp"
+                        android:paddingLeft="20dp" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="center|top"
+                        android:paddingTop="15dp">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/iv_new_re"
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:src="@drawable/student"
+                            app:civ_border_width="2dp"
+                            app:civ_border_color="@color/color_blue"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7"
+                        android:layout_gravity="center">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <com.mxi.buildsterapp.widget.MyTextviewBold
+                                android:id="@+id/tv_new_re"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="New Recipeint Name"
+                                android:textColor="@color/black"
+                                android:paddingTop="5dp"/>
+
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="5dp">
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/rv_issue_images"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                        </android.support.v7.widget.RecyclerView>
+
+                        <LinearLayout
+                            android:id="@+id/ln_no_issue_img"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:visibility="gone">
+
+                            <com.mxi.buildsterapp.widget.MyTextviewLight
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="No Images Found"
+                                android:textColor="@color/color_blue" />
+
+
+                        </LinearLayout>
+
+
+                    </FrameLayout>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.mxi.buildsterapp.widget.MyTextviewBold
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Original Comments"
+                        android:textColor="@color/color_blue"
+                        android:paddingTop="20dp"
+                        android:paddingLeft="20dp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/invite_back"
+                        android:orientation="horizontal"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp">
+
+                        <com.mxi.buildsterapp.widget.MyEditText
+                            android:id="@+id/ed_original_comment"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter comment"
+                            android:lines="10"
+                            android:minLines="6"
+                            android:gravity="top|left"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/black"
+                            android:maxLines="15"
+                            android:textSize="13sp"
+                            android:background="@drawable/bottom_menu_back_2"/>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </android.support.v4.widget.NestedScrollView>
+
+
+    </LinearLayout>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/ln_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:cardElevation="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:paddingLeft="35dp"
+                android:paddingRight="35dp"
+                android:gravity="center">
+
+                <com.mxi.buildsterapp.widget.MyButton2
+                    android:id="@+id/btn_submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="37dp"
+                    android:background="@drawable/btn_back_two"
+                    android:text="Submit"
+                    android:textColor="@color/color_white"
+                    android:textSize="15sp"
+                    android:textAllCaps="false"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:paddingLeft="35dp"
+                android:paddingRight="35dp"
+                android:gravity="center">
+
+                <com.mxi.buildsterapp.widget.MyButton2
+                    android:id="@+id/btn_close"
+                    android:layout_width="match_parent"
+                    android:layout_height="37dp"
+                    android:background="@drawable/btn_back_two"
+                    android:text="Close"
+                    android:textColor="@color/color_white"
+                    android:textSize="15sp"
+                    android:textAllCaps="false"/>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

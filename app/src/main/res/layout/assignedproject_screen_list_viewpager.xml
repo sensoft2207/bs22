@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/ln_bottom">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager_assigned"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        </android.support.v4.view.ViewPager>
+
+
+    </LinearLayout>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/ln_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        app:cardElevation="30dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/ln_home"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/bottom_right_border"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/iv_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_home"
+                    android:tint="@color/color_blue"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ln_list"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/bottom_right_border"
+                android:gravity="center">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/iv_list"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_notification"
+                        android:tint="@color/color_blue"
+                        android:layout_gravity="center"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="3dp">
+
+
+                        <LinearLayout
+                            android:id="@+id/ln_main_notification"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:background="@drawable/red_circle"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:layout_alignParentRight="true"
+                            android:visibility="gone">
+
+                            <com.mxi.buildsterapp.widget.MyTextviewBold
+                                android:id="@+id/tv_main_notification"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="15sp"
+                                android:gravity="center"
+                                android:textColor="@color/color_white"/>
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ln_message"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/bottom_right_border"
+                android:gravity="center">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/iv_message"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_message"
+                        android:tint="@color/color_blue"
+                        android:layout_gravity="center"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="3dp">
+
+
+                        <LinearLayout
+                            android:id="@+id/ln_msg_notification"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:background="@drawable/red_circle"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:layout_alignParentRight="true"
+                            android:visibility="gone">
+
+                            <com.mxi.buildsterapp.widget.MyTextviewBold
+                                android:id="@+id/tv_msg_notification"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="15sp"
+                                android:gravity="center"
+                                android:textColor="@color/color_white"/>
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </FrameLayout>
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+
+</RelativeLayout>

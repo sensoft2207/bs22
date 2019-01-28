@@ -57,7 +57,8 @@
                 android:gravity="center"
                 android:paddingTop="15dp"
                 android:paddingLeft="18dp"
-                android:paddingRight="18dp">
+                android:paddingRight="18dp"
+                android:paddingBottom="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -85,6 +86,7 @@
                         android:layout_weight="3">
 
                         <com.mxi.buildsterapp.widget.MyTextviewLight
+                            android:id="@+id/tv_project_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text=": Project Awash"
@@ -124,6 +126,7 @@
                         android:layout_weight="3">
 
                         <com.mxi.buildsterapp.widget.MyTextviewLight
+                            android:id="@+id/tv_project_manager"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text=": Smith patel"
@@ -150,7 +153,7 @@
                         <com.mxi.buildsterapp.widget.MyTextviewBold
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/project_name"
+                            android:text="@string/project_address"
                             android:gravity="center|left"
                             android:textColor="@color/color_blue"
                             android:textSize="13sp"/>
@@ -164,6 +167,7 @@
                         android:layout_weight="3">
 
                         <com.mxi.buildsterapp.widget.MyTextviewLight
+                            android:id="@+id/tv_project_address"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text=": Project Awash"
@@ -210,11 +214,12 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/invite_back"
                     android:orientation="horizontal"
-                    android:paddingLeft="20dp"
+                    android:paddingLeft="15dp"
                     android:paddingTop="5dp"
                     android:paddingBottom="5dp">
 
-                    <com.mxi.buildsterapp.widget.MyEditText
+                    <com.mxi.buildsterapp.widget.MyAutoEdittext
+                        android:id="@+id/ed_multiple_email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/email_or"
@@ -223,7 +228,20 @@
                         android:textColor="@color/black"
                         android:inputType="textEmailAddress"
                         android:singleLine="true"
-                        android:background="@android:color/transparent"/>
+                        android:background="@android:color/transparent"
+                        android:visibility="gone"/>
+
+                    <com.mxi.buildsterapp.chiptext.ContactsCompletionView
+                        android:id="@+id/autocomplete_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusableInTouchMode="true"
+                        android:imeOptions="actionDone"
+                        android:inputType="text|textNoSuggestions|textMultiLine"
+                        android:nextFocusDown="@+id/editText"
+                        android:textColor="@color/color_blue"
+                        android:background="@android:color/transparent"
+                        android:textSize="12sp" />
 
 
                 </LinearLayout>
@@ -255,7 +273,7 @@
                     android:paddingBottom="5dp">
 
                     <com.mxi.buildsterapp.widget.MyEditText
-                        android:id="@+id/editText1"
+                        android:id="@+id/ed_message"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="@string/add_message_optional"

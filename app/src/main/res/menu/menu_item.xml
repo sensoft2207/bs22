@@ -10,12 +10,12 @@
         android:title="Emergency"
         app:showAsAction="always"/>
 
-    <item
+   <!-- <item
         android:id="@+id/action_notification"
         android:icon="@drawable/ic_notification"
         android:orderInCategory="101"
         android:title="Emergency"
         app:showAsAction="always"/>
-
+-->
 
 </menu>

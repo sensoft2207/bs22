@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="20dp"
+        android:text="SELECT AN OPTION"
+        android:layout_marginBottom="20dp"
+        android:background="#DDDDDD"
+        android:textSize="16sp" android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/btn_next_dialog"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimaryDark"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="Next"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btn_delete_dialog"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Delete"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        android:textColor="@color/color_white"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>

@@ -136,6 +136,13 @@ public class RealPathUtil {
                     return uri.getLastPathSegment();
 
                 return getDataColumn(context, uri, null, null);
+            }else if ("content".equalsIgnoreCase(uri.getScheme())) {
+
+                // Return the remote address
+                if (isGooglePhotosUriDrive(uri))
+                    return uri.getLastPathSegment();
+
+                return getDataColumn(context, uri, null, null);
             }
             // File
             else if ("file".equalsIgnoreCase(uri.getScheme())) {
@@ -210,5 +217,9 @@ public class RealPathUtil {
         public static boolean isGooglePhotosUri(Uri uri) {
             return "com.google.android.apps.photos.contentprovider".equals(uri.getAuthority());
         }
+
+    public static boolean isGooglePhotosUriDrive(Uri uri) {
+        return "com.google.android.apps.docs.storage".equals(uri.getAuthority());
+    }
 
 }

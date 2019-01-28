@@ -45,6 +45,8 @@ public class ActionDetailIssueImageWebview extends AppCompatActivity {
         }
     };
 
+    boolean isJavascriptLoading = false;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -112,6 +114,21 @@ public class ActionDetailIssueImageWebview extends AppCompatActivity {
                     iv_no_network.setVisibility(View.VISIBLE);
                 }
 
+                public void onPageFinished(WebView view, String url) {
+
+                    if (isJavascriptLoading == false){
+
+                        home_web.loadUrl(url);
+
+                        home_web.setVisibility(View.VISIBLE);
+
+                        isJavascriptLoading = true;
+
+                    }else {
+
+                    }
+                }
+
                 @Override
                 public boolean shouldOverrideUrlLoading(WebView view, String url) {
 
@@ -141,6 +158,8 @@ public class ActionDetailIssueImageWebview extends AppCompatActivity {
 
 
             home_web.loadUrl(url);
+
+            home_web.setVisibility(View.INVISIBLE);
 
 
         }

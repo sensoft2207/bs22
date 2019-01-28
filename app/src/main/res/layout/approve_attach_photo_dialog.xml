@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="330dp"
+        android:background="@drawable/rectangle_white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:background="@drawable/dialog_top_back"
+            android:gravity="center">
+
+            <com.mxi.buildsterapp.widget.MyTextviewBold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Complete Task"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textColor="@color/color_white"
+                android:textStyle="bold"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_bg_change"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:padding="5dp"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/frame"/>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/ln_attach_photo"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:gravity="center"
+                        android:background="@drawable/project_no_radious">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_camera"/>
+
+                    </LinearLayout>
+
+                    <com.mxi.buildsterapp.widget.MyTextviewBold
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tap icon to attach photo"
+                        android:textSize="20sp"
+                        android:paddingTop="20dp"
+                        android:textColor="@color/color_white"/>
+
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp"
+                android:gravity="center">
+
+                <com.mxi.buildsterapp.widget.MyButton
+                    android:id="@+id/btn_upload"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@drawable/btn_back_two"
+                    android:text="Upload"
+                    android:textColor="@color/color_white"
+                    android:textSize="13sp"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp"
+                android:gravity="center">
+
+                <com.mxi.buildsterapp.widget.MyButton
+                    android:id="@+id/btn_no_thanks"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@drawable/btn_back_two"
+                    android:text="No Thanks"
+                    android:textColor="@color/color_white"
+                    android:textSize="13sp"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

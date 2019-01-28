@@ -45,10 +45,11 @@
                     android:gravity="center">
 
                     <com.mxi.buildsterapp.widget.MyTextviewBold
+                        android:id="@+id/tv_project_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/p_title"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:paddingLeft="0dp"
                         android:textColor="@color/color_blue"/>
 
@@ -59,7 +60,8 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:visibility="invisible">
 
                     <ImageView
                         android:id="@+id/iv_settings"
@@ -100,69 +102,142 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="15dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp">
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="35dp"
-                    android:background="@drawable/search_border"
-                    android:orientation="horizontal">
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="4">
 
                     <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="5"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:gravity="center">
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:background="@drawable/search_border"
+                        android:orientation="horizontal">
 
-                        <com.mxi.buildsterapp.widget.MyEditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/search_here2"
-                            android:textSize="16sp"
-                            android:textColorHint="@color/color_blue"
-                            android:textColor="@color/color_blue"
-                            android:background="@android:color/transparent"/>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:gravity="center">
 
-                    </LinearLayout>
+                            <com.mxi.buildsterapp.widget.MyEditText
+                                android:id="@+id/ed_search"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/search_here2"
+                                android:textSize="16sp"
+                                android:textColorHint="@color/color_blue"
+                                android:textColor="@color/color_blue"
+                                android:singleLine="true"
+                                android:background="@android:color/transparent"/>
 
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center">
+                        </LinearLayout>
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_serach"
-                            android:padding="5dp"/>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_serach"
+                                android:padding="5dp"/>
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
                 </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:paddingLeft="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:background="@drawable/search_border"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/ln_plan"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:gravity="center">
+
+                            <com.mxi.buildsterapp.widget.MyTextviewLight
+                                android:id="@+id/tv_plan"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Plan"
+                                android:gravity="center"
+                                android:paddingLeft="0dp"
+                                android:textColor="@color/color_white"/>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ln_list"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:gravity="center">
+
+                            <com.mxi.buildsterapp.widget.MyTextviewLight
+                                android:id="@+id/tv_list"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="List"
+                                android:gravity="center"
+                                android:paddingLeft="0dp"
+                                android:textColor="@color/color_white"/>
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="130dp"
                 android:paddingTop="5dp">
 
+
                 <LinearLayout
+                    android:id="@+id/ln_invite_visibility"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="2"
+                    android:layout_weight="3"
                     android:padding="8dp"
-                    android:orientation="vertical">
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         xmlns:app="http://schemas.android.com/apk/res-auto"
                         android:id="@+id/iv_invite"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
                         android:src="@drawable/plus"
                         app:civ_border_width="2dp"
                         app:civ_border_color="@color/color_blue"/>
@@ -172,6 +247,8 @@
                         android:layout_height="wrap_content"
                         android:text="Invite"
                         android:gravity="center"
+                        android:paddingTop="5dp"
+                        android:textSize="12sp"
                         android:textColor="@color/color_blue"/>
 
                 </LinearLayout>
@@ -179,12 +256,54 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="7">
+                    android:layout_weight="7"
+                    android:gravity="center">
 
-                    <android.support.v7.widget.RecyclerView
-                        android:id="@+id/rc_trade_detail"
+                    <FrameLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="match_parent">
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/rc_trade_detail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="invisible"/>
+
+                        <LinearLayout
+                            android:id="@+id/ln_no_worker"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:visibility="invisible">
+
+                            <com.mxi.buildsterapp.widget.MyTextviewLight
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Click the Invite button to add people to your project"
+                                android:gravity="center"
+                                android:textSize="12sp"
+                                android:textColor="@color/color_blue"/>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center">
+
+                            <ProgressBar
+                                android:id="@+id/progress"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="visible"
+                                android:padding="25dp"/>
+
+                        </LinearLayout>
+
+
+
+                    </FrameLayout>
 
                 </LinearLayout>
 
@@ -195,19 +314,135 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <FrameLayout
         android:id="@+id/ln_middle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/ln_first"
         android:orientation="vertical">
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/rc_project"
+        <LinearLayout
+            android:id="@+id/ln_plan_visible_invisible"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:visibility="invisible">
 
-    </LinearLayout>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/ln_no_screen_center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:visibility="invisible">
+
+                    <com.mxi.buildsterapp.widget.MyTextviewLight
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/no_screen"
+                        android:textSize="18sp"
+                        android:textColor="@color/color_blue"
+                        android:paddingTop="15dp"/>
+
+                </LinearLayout>
+
+                <android.support.v4.widget.SwipeRefreshLayout
+                    android:id="@+id/sw_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rc_project"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="invisible"/>
+
+                </android.support.v4.widget.SwipeRefreshLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <ProgressBar
+                        android:id="@+id/progress2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        android:padding="100dp"/>
+
+                </LinearLayout>
+
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ln_list_visible_invisible"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <FrameLayout
+                android:id="@+id/ln_middle2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v4.widget.SwipeRefreshLayout
+                    android:id="@+id/sw_layout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rc_action_item"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="invisible"/>
+
+                </android.support.v4.widget.SwipeRefreshLayout>
+
+                <LinearLayout
+                    android:id="@+id/ln_no_action_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="invisible"
+                    android:gravity="center">
+
+                    <com.mxi.buildsterapp.widget.MyTextviewLight
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No Action Item"
+                        android:textColor="@color/color_blue"
+                        android:textSize="20sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <ProgressBar
+                        android:id="@+id/progress3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        android:padding="100dp"/>
+
+                </LinearLayout>
+
+
+            </FrameLayout>
+
+
+        </LinearLayout>
+
+    </FrameLayout>
 
 
 </RelativeLayout>

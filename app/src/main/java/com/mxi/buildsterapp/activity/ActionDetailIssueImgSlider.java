@@ -70,14 +70,7 @@ public class ActionDetailIssueImgSlider extends AppCompatActivity {
 
         } else {
 
-            if(getIntent().getStringExtra("from").equals("myproject")){
-
-                getDeficiencyDetailWS();
-
-            }else {
-
-                getDeficiencyDetailWSTwo();
-            }
+            getDeficiencyDetailWS();
         }
 
         iv_previous.setOnClickListener(new View.OnClickListener() {
@@ -233,123 +226,6 @@ public class ActionDetailIssueImgSlider extends AppCompatActivity {
 
     }
 
-    private void getDeficiencyDetailWSTwo() {
-
-        final ProgressDialog pDialog = new ProgressDialog(this);
-        pDialog.setMessage("Please wait...");
-        pDialog.setCancelable(false);
-        pDialog.show();
-
-        StringRequest jsonObjReq = new StringRequest(Request.Method.POST, Const.ServiceType.GET_DEFICIENCY_INFORMATION,
-                new Response.Listener<String>() {
-
-
-                    @Override
-                    public void onResponse(String response) {
-                        Log.e("response:def data", response);
-
-                        images = new ArrayList<>();
-
-                        kid_task_list = new ArrayList<>();
-
-
-                        try {
-
-                            JSONObject jsonObject = new JSONObject(response);
-
-                            if (jsonObject.getString("status").equals("200")) {
-
-                                pDialog.dismiss();
-
-                                JSONArray dataArray = jsonObject.getJSONArray("deficiency_images");
-
-                                for (int i = 0; i < dataArray.length(); i++) {
-
-                                    JSONObject jsonObject1 = dataArray.getJSONObject(i);
-
-
-                                    KidTaskData k_model = new KidTaskData();
-                                    k_model.setTaskImage(jsonObject1.getString("def_image"));
-
-                                    kid_task_list.add(k_model);
-                                }
-
-                                JSONArray dataArray2 = jsonObject.getJSONArray("deficiency_information");
-
-                                for (int i = 0; i < dataArray2.length(); i++) {
-
-                                    JSONObject jsonObject2 = dataArray2.getJSONObject(i);
-
-                                    String screen_image = jsonObject2.getString("screen_image");
-                                    String status = jsonObject2.getString("status");
-
-                                    String x_cor = jsonObject2.getString("posX");
-                                    String y_cor = jsonObject2.getString("posY");
-
-                                    float x = Float.parseFloat(x_cor);
-                                    float y = Float.parseFloat(y_cor);
-
-                                }
-
-                                setImagesData();
-
-                                adapter = new ViewPagerAdapter(getSupportFragmentManager(), images);
-                                vp_slider.setAdapter(adapter);
-
-
-
-                            } else if (jsonObject.getString("status").equals("404")) {
-
-                                pDialog.dismiss();
-
-
-                            } else {
-                                pDialog.dismiss();
-                                cc.showToast(jsonObject.getString("message"));
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-
-                }, new Response.ErrorListener() {
-
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                pDialog.dismiss();
-                cc.showToast(getString(R.string.ws_error));
-            }
-        }) {
-
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> params = new HashMap<String, String>();
-                params.put("user_id", cc.loadPrefString("user_id"));
-                params.put("project_id", cc.loadPrefString("project_id_assigned"));
-                params.put("screen_id", cc.loadPrefString("action_a_screen_id"));
-                params.put("deficiency_id", cc.loadPrefString("action_a_def_id"));
-
-                Log.e("Request def", String.valueOf(params));
-
-                return params;
-            }
-
-
-            @Override
-            public Map<String, String> getHeaders() throws AuthFailureError {
-                HashMap<String, String> headers = new HashMap<>();
-                headers.put("Authorization", Const.Authorizations.AUTHORIZATION);
-                headers.put("UserAuth", cc.loadPrefString("user_token"));
-                Log.i("request header", headers.toString());
-                return headers;
-            }
-
-        };
-
-        AppController.getInstance().addToRequestQueue(jsonObjReq, "Temp");
-
-
-    }
 
     private void setImagesData() {
 

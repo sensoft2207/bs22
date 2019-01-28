@@ -1,13 +1,20 @@
 package com.mxi.buildsterapp.activity;
 
+import android.Manifest;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.app.VoiceInteractor;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.provider.Settings;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -23,6 +30,9 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
 import com.mxi.buildsterapp.R;
 import com.mxi.buildsterapp.comman.AppController;
 import com.mxi.buildsterapp.comman.CommanClass;
@@ -44,12 +54,18 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText ed_email, ed_password;
 
-    String email, password, forgot_email, android_id;
+    String email, password, forgot_email, android_id,fcm_token;
 
     Button btn_login;
 
     ProgressDialog progressDialog;
     Dialog dialog;
+
+    int PERMISSION_ALL = 1;
+
+    String[] PERMISSIONS = {Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +81,14 @@ public class LoginActivity extends AppCompatActivity {
 
         android_id = Settings.Secure.getString(getContentResolver(),
                 Settings.Secure.ANDROID_ID);
+
+        FirebaseInstanceId.getInstance().getInstanceId().addOnSuccessListener( this,  new OnSuccessListener<InstanceIdResult>() {
+            @Override
+            public void onSuccess(InstanceIdResult instanceIdResult) {
+                fcm_token = instanceIdResult.getToken();
+                Log.e("newToken",fcm_token);
+            }
+        });
 
 
         tv_forgot_password = (TextView) findViewById(R.id.tv_forgot_password);
@@ -132,9 +156,11 @@ public class LoginActivity extends AppCompatActivity {
         } else {
 
             signInWS(email, password);
+
         }
 
     }
+
 
     private void signInWS(final String email, final String password) {
 
@@ -168,7 +194,7 @@ public class LoginActivity extends AppCompatActivity {
                 params.put("email", email);
                 params.put("password", password);
                 params.put("device_type", "Android");
-                params.put("fcm_id", "2223");
+                params.put("fcm_id", fcm_token);
                 params.put("ios_id", "225358");
                 params.put("device_id", android_id);
 
@@ -214,6 +240,7 @@ public class LoginActivity extends AppCompatActivity {
                     cc.savePrefString("user_token", jobj.getString("user_token"));
                     cc.savePrefString("firstname", jobj.getString("firstname"));
                     cc.savePrefString("lastname", jobj.getString("lastname"));
+                    cc.savePrefString("project_images", jobj.getString("profile_image"));
 
                 }
 
@@ -366,6 +393,61 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+
+        if (!hasPermissions(this, PERMISSIONS)) {
+            ActivityCompat.requestPermissions(this, PERMISSIONS, PERMISSION_ALL);
+        } else {
+
+            CountDown();
+        }
+
+    }
+
+    public static boolean hasPermissions(Context context, String... permissions) {
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && context != null && permissions != null) {
+            for (String permission : permissions) {
+                if (ActivityCompat.checkSelfPermission(context, permission) != PackageManager.PERMISSION_GRANTED) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        switch (requestCode) {
+
+            case 1:
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                    CountDown();
+
+                } else {
+                    showErrorDialog();
+                }
+                break;
+        }
+    }
+
+    public void showErrorDialog() {
+
+        AlertDialog.Builder alert = new AlertDialog.Builder(LoginActivity.this);
+        alert.setTitle(getString(R.string.app_name));
+        alert.setMessage(getString(R.string.allow_permission));
+        alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+                if (!hasPermissions(LoginActivity.this, PERMISSIONS)) {
+                    ActivityCompat.requestPermissions(LoginActivity.this, PERMISSIONS, PERMISSION_ALL);
+                }
+            }
+        });
+        alert.show();
+    }
+
+    private void CountDown() {
 
         if (cc.loadPrefBoolean("isLogin") == true) {
 

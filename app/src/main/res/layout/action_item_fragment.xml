@@ -125,6 +125,7 @@
                             android:textSize="16sp"
                             android:textColorHint="@color/color_blue"
                             android:textColor="@color/color_blue"
+                            android:singleLine="true"
                             android:background="@android:color/transparent"/>
 
                     </LinearLayout>
@@ -152,7 +153,7 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <FrameLayout
         android:id="@+id/ln_middle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -160,12 +161,51 @@
         android:orientation="vertical"
         android:paddingTop="10dp">
 
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/sw_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rc_action_item"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:visibility="invisible"/>
 
-    </LinearLayout>
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+        <LinearLayout
+            android:id="@+id/ln_no_action_item"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            android:gravity="center">
+
+            <com.mxi.buildsterapp.widget.MyTextviewLight
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No Action Item"
+                android:textColor="@color/color_blue"
+                android:textSize="20sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <ProgressBar
+                android:id="@+id/progress"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible"
+                android:padding="120dp"/>
+
+        </LinearLayout>
+
+
+    </FrameLayout>
 
 
 </RelativeLayout>

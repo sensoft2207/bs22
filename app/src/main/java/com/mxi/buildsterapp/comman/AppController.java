@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.os.Handler;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -44,6 +45,18 @@ public class AppController extends Application {
 
         cc = new CommanClass(getApplicationContext());
 
+
+
+    }
+
+    private void checkInternetConnection() {
+
+        if (!cc.isConnectingToInternet()){
+
+            cc.showToast(getString(R.string.no_internet));
+        }else {
+
+        }
     }
 
 

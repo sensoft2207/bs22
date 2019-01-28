@@ -1,6 +1,8 @@
 package com.mxi.buildsterapp.adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.util.Base64;
 import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,10 +13,12 @@ import android.widget.CompoundButton;
 import android.widget.ImageView;
 
 
+import com.bumptech.glide.Glide;
 import com.mxi.buildsterapp.R;
 import com.mxi.buildsterapp.model.ImagePdf;
 import com.mxi.buildsterapp.utils.SquareImageView;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 
@@ -86,7 +90,14 @@ public class GridViewAdapter extends BaseAdapter {
 
         final ImagePdf im = Imageid.get(position);
 
+        /*Bitmap bmp = im.getBim();
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
+        byte[] byteArray = stream.toByteArray();
+*/
         imageView.setImageBitmap(im.getBim());
+
+//        Glide.with(mContext).load(byteArray).asBitmap().into(imageView);
 
         imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
 
@@ -114,8 +125,6 @@ public class GridViewAdapter extends BaseAdapter {
             viewHolder.checkBox = (CheckBox) convertView.findViewById(R.id.checkbox);
 
             viewHolder.imageView.setImageBitmap(im.getBim());
-
-
 
             viewHolder.imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
 

@@ -5,6 +5,7 @@
     android:orientation="vertical">
 
     <LinearLayout
+        android:id="@+id/ln_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="20dp"
@@ -54,15 +55,64 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/rc_my_project"
+        <LinearLayout
+            android:id="@+id/ln_create_project_center"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="invisible">
 
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/iv_create_project"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/add_project_two"
+                android:tint="@color/color_blue"/>
+
+            <com.mxi.buildsterapp.widget.MyTextviewLight
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/create_project"
+                android:textSize="18sp"
+                android:textColor="@color/color_blue"
+                android:paddingTop="15dp"/>
+
+        </LinearLayout>
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/sw_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rc_my_project"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="invisible"/>
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <ProgressBar
+                android:id="@+id/progress"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible"
+                android:padding="120dp"/>
+
+        </LinearLayout>
+
+
+    </FrameLayout>
 
 </LinearLayout>

@@ -45,10 +45,11 @@
                     android:gravity="center">
 
                     <com.mxi.buildsterapp.widget.MyTextviewBold
+                        android:id="@+id/tv_project_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/message"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:paddingLeft="0dp"
                         android:textColor="@color/color_blue"/>
 
@@ -118,12 +119,14 @@
                         android:gravity="center">
 
                         <com.mxi.buildsterapp.widget.MyEditText
+                            android:id="@+id/ed_search"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/search_here5"
                             android:textSize="16sp"
                             android:textColorHint="@color/color_blue"
                             android:textColor="@color/color_blue"
+                            android:singleLine="true"
                             android:background="@android:color/transparent"/>
 
                     </LinearLayout>
@@ -151,7 +154,7 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <FrameLayout
         android:id="@+id/ln_middle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -159,12 +162,51 @@
         android:orientation="vertical"
         android:paddingTop="10dp">
 
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/sw_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rc_message"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:visibility="visible"/>
 
-    </LinearLayout>
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+        <LinearLayout
+            android:id="@+id/ln_no_message"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            android:gravity="center">
+
+            <com.mxi.buildsterapp.widget.MyTextviewLight
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No Message"
+                android:textColor="@color/color_blue"
+                android:textSize="20sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <ProgressBar
+                android:id="@+id/progress"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible"
+                android:padding="100dp"/>
+
+        </LinearLayout>
+
+
+    </FrameLayout>
 
 
 </RelativeLayout>

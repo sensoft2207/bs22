@@ -8,6 +8,10 @@ public class MessageData {
         this.name = name;
     }
 
+    public MessageData() {
+
+    }
+
     public String getName() {
         return name;
     }

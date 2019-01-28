@@ -7,8 +7,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="220dp"
-        android:paddingTop="20dp"
+        android:layout_height="300dp"
+        android:paddingTop="10dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:paddingBottom="10dp">
@@ -22,24 +22,33 @@
                     android:id="@+id/iv_back"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:scaleType="fitXY"
-                    android:padding="5dp"/>
+                    android:scaleType="fitXY"/>
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:src="@drawable/frame"/>
 
+                <ProgressBar
+                    android:id="@+id/progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible"
+                    android:padding="50dp"/>
+
                 <LinearLayout
+                    android:id="@+id/ln_view_project"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="3"
-                        android:gravity="center">
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:background="#99006CA6"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp">
 
                         <com.mxi.buildsterapp.widget.MyTextviewBold
                             android:id="@+id/tv_project_name"
@@ -55,9 +64,9 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="2"
-                        android:orientation="horizontal">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="20dp">
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -112,14 +121,14 @@
 
                         </LinearLayout>
 
-                        <LinearLayout
+                        <!--<LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="2"
                             android:padding="10dp">
 
                             <LinearLayout
-                                android:id="@+id/ln_view_project"
+
                                 android:layout_width="match_parent"
                                 android:layout_height="40dp"
                                 android:gravity="center"
@@ -133,7 +142,7 @@
 
                             </LinearLayout>
 
-                        </LinearLayout>
+                        </LinearLayout>-->
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -168,27 +177,195 @@
 
                     </LinearLayout>
 
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
                     <LinearLayout
+                        android:id="@+id/ln_1"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="0.5"
-                        android:gravity="center">
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:orientation="vertical">
+
+
+
+                        <LinearLayout
+                            android:id="@+id/ln_my_pins"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:background="#00AFFB"
+                            android:gravity="center">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center">
+
+                                <com.mxi.buildsterapp.widget.MyTextviewBold
+                                    android:id="@+id/tv_my_pins"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="0"
+                                    android:textColor="@color/color_white"
+                                    android:textSize="13sp"/>
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="8"
+                                android:gravity="center">
+
+                                <com.mxi.buildsterapp.widget.MyTextviewBold
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center|left"
+                                    android:text="My Pins"
+                                    android:textColor="@color/color_white"
+                                    android:textSize="13sp"/>
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/ln_assigned_pins"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:background="#009831"
+                            android:gravity="center">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center">
+
+                                <com.mxi.buildsterapp.widget.MyTextviewLight
+                                    android:id="@+id/tv_assigned_pins"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="0"
+                                    android:gravity="center"
+                                    android:textColor="@color/color_white"
+                                    android:textSize="13sp"/>
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="8"
+                                android:gravity="center">
+
+
+                                <com.mxi.buildsterapp.widget.MyTextviewLight
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Assigned Pins"
+                                    android:gravity="center|left"
+                                    android:textColor="@color/color_white"
+                                    android:textSize="13sp"/>
+
+                            </LinearLayout>
+
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/ln_awaiting_approval"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:background="#B900F9"
+                            android:gravity="center">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center">
+
+                                <com.mxi.buildsterapp.widget.MyTextviewLight
+                                    android:id="@+id/tv_awaiting_approval"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="0"
+                                    android:gravity="center"
+                                    android:textColor="@color/color_white"
+                                    android:textSize="13sp"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="8"
+                                android:gravity="center">
+
+                                <com.mxi.buildsterapp.widget.MyTextviewLight
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Awaiting approval"
+                                    android:gravity="center|left"
+                                    android:textColor="@color/color_white"
+                                    android:textSize="13sp"/>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ln_unread_notification"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:background="#FF001B"
+                            android:gravity="center">
+
+                            <com.mxi.buildsterapp.widget.MyTextviewBold
+                                android:id="@+id/tv_unread_notification"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text=" !Unread notification and message my project"
+                                android:gravity="center|left"
+                                android:textColor="@color/color_white"
+                                android:textSize="13sp"/>
+
+                        </LinearLayout>
+
 
                     </LinearLayout>
 
-                </LinearLayout>
+
+
+                </RelativeLayout>
 
             </FrameLayout>
 
     </LinearLayout>
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="130dp">
+        android:layout_height="130dp"
+        android:visibility="gone">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:paddingTop="30dp">
 
 
             <LinearLayout
@@ -207,6 +384,7 @@
                 android:gravity="center|top|right">
 
                 <LinearLayout
+                    android:id="@+id/ln_project_message"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:gravity="center"
@@ -216,6 +394,7 @@
                     android:background="@drawable/red_circle">
 
                     <com.mxi.buildsterapp.widget.MyTextviewBold
+                        android:id="@+id/tv_project_message"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="12"
@@ -225,6 +404,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/ln_project_def"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:gravity="center"
@@ -234,6 +414,56 @@
                     android:background="@drawable/yellow_circle">
 
                     <com.mxi.buildsterapp.widget.MyTextviewBold
+                        android:id="@+id/tv_project_def"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/color_white"/>
+
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="10dp"
+            android:visibility="gone">
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center|top|right">
+
+
+                <LinearLayout
+                    android:id="@+id/ln_project_approved"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:elevation="10dp"
+                    android:orientation="vertical"
+                    android:layout_marginRight="25dp"
+                    android:background="@drawable/green_circle">
+
+                    <com.mxi.buildsterapp.widget.MyTextviewBold
+                        android:id="@+id/tv_project_approved"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="0"
@@ -249,6 +479,6 @@
         </LinearLayout>
 
 
-    </LinearLayout>
+    </FrameLayout>
 
 </FrameLayout>

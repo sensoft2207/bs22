@@ -1,7 +1,6 @@
 package com.mxi.buildsterapp.activity;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -23,7 +22,6 @@ import com.mxi.buildsterapp.comman.CommanClass;
 import com.mxi.buildsterapp.comman.Const;
 import com.mxi.buildsterapp.utils.AndyUtils;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -38,9 +36,9 @@ public class SignupActivity extends AppCompatActivity {
 
     Button btn_signup;
 
-    EditText ed_firstname,ed_lastname,ed_email,ed_password,ed_confirm_password;
+    EditText ed_firstname, ed_lastname, ed_email, ed_password, ed_confirm_password;
 
-    String firstname,lastname,email,password,confirm_password;
+    String firstname, lastname, email, password, confirm_password;
 
     TextView tv_back_login;
 
@@ -58,7 +56,7 @@ public class SignupActivity extends AppCompatActivity {
 
         cc = new CommanClass(this);
 
-        iv_back = (ImageView)findViewById(R.id.iv_back);
+        iv_back = (ImageView) findViewById(R.id.iv_back);
 
         btn_signup = (Button) findViewById(R.id.btn_signup);
 
@@ -110,52 +108,57 @@ public class SignupActivity extends AppCompatActivity {
         password = ed_password.getText().toString();
         confirm_password = ed_confirm_password.getText().toString();
 
-        if (!cc.isConnectingToInternet()){
+        if (!cc.isConnectingToInternet()) {
 
-        }else if (firstname.equals("")){
+        } else if (firstname.equals("")) {
 
             cc.showToast(getString(R.string.fname_vali));
 
             ed_firstname.requestFocus();
 
-        }else if (lastname.equals("")){
+        } else if (lastname.equals("")) {
 
             cc.showToast(getString(R.string.lname_vali));
 
             ed_lastname.requestFocus();
 
-        }else if (!AndyUtils.eMailValidation(email)){
+        } else if (!AndyUtils.eMailValidation(email)) {
 
             cc.showToast(getString(R.string.email_vali));
 
             ed_email.requestFocus();
 
-        }else if (password.equals("")){
+        } else if (password.equals("")) {
 
             cc.showToast(getString(R.string.pass_vali));
 
             ed_password.requestFocus();
 
-        }else if (confirm_password.equals("")){
+        } else if (confirm_password.equals("")) {
 
             cc.showToast(getString(R.string.c_pass_vali1));
 
             ed_confirm_password.requestFocus();
 
-        }else if (!confirm_password.equals(password)){
+        } else if (!confirm_password.equals(password)) {
 
             cc.showToast(getString(R.string.c_pass_vali2));
-        }else {
+        } else {
 
-            if (!cc.isConnectingToInternet()){
+            if (!cc.isConnectingToInternet()) {
 
                 cc.showToast(getString(R.string.no_internet));
-            }else {
+            } else {
 
-                signUpWS(firstname,lastname,email,password);
+                signUpWS(firstname, lastname, email, password);
+
+                postyy(firstname,lastname);
             }
 
         }
+    }
+
+    private void postyy(String hello, String lastname) {
     }
 
     private void signUpWS(final String firstname, final String lastname, final String email, final String password) {

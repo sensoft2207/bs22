@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="130dp"
+    android:gravity="center">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <FrameLayout
+                android:layout_width="70dp"
+                android:layout_height="70dp">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/iv_worker_pic"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/student"/>
+
+                <ProgressBar
+                    android:id="@+id/progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible"
+                    android:padding="15dp"/>
+
+                <RelativeLayout
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/ln_trade_green_count"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/invited_trad_w"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentLeft="true"
+                        android:gravity="center">
+
+                        <com.mxi.buildsterapp.widget.MyTextviewBold
+                            android:id="@+id/tv_trade_green_count"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="15sp"
+                            android:gravity="center"
+                            android:textColor="#009831"/>
+
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/ln_trade_purple_count"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/invited_trad_w"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center">
+
+                        <com.mxi.buildsterapp.widget.MyTextviewBold
+                            android:id="@+id/tv_trade_purple_count"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="15sp"
+                            android:gravity="center"
+                            android:textColor="#B900F9"/>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </FrameLayout>
+
+            <com.mxi.buildsterapp.widget.MyTextviewLight
+                android:id="@+id/tv_worker_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Invite"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:paddingTop="5dp"
+                android:textColor="@color/color_blue"/>
+
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+</LinearLayout>

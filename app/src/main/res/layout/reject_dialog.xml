@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@drawable/rectangle_white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:background="@drawable/dialog_top_back"
+            android:gravity="center">
+
+            <com.mxi.buildsterapp.widget.MyTextviewBold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/reject_dialog"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textColor="@color/color_white"
+                android:textStyle="bold"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="6"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="5dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+
+            <com.mxi.buildsterapp.widget.MyTextviewBold
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Comment"
+                android:gravity="top|left|center"
+                android:textSize="16sp"
+                android:textColor="@color/black"/>
+
+            <com.mxi.buildsterapp.widget.MyTextviewLight
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="This will be shared with the trade worker attached to this action item."
+                android:gravity="top|left|center"
+                android:textSize="13sp"
+                android:textColor="@color/black"
+                android:paddingTop="5dp"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/invite_back"
+                android:orientation="horizontal"
+                android:paddingLeft="15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_marginTop="10dp">
+
+                <com.mxi.buildsterapp.widget.MyEditText
+                    android:id="@+id/ed_comment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/reject_dialog_info"
+                    android:lines="10"
+                    android:minLines="3"
+                    android:gravity="top|left"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:maxLines="15"
+                    android:textSize="13sp"
+                    android:background="@drawable/bottom_menu_back_2"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp"
+                android:gravity="center">
+
+                <com.mxi.buildsterapp.widget.MyButton
+                    android:id="@+id/btn_yes"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@drawable/btn_back_two"
+                    android:text="@string/yes"
+                    android:textColor="@color/color_white"
+                    android:textSize="15sp"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp"
+                android:gravity="center">
+
+                <com.mxi.buildsterapp.widget.MyButton
+                    android:id="@+id/btn_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@drawable/btn_back_two"
+                    android:text="@string/no"
+                    android:textColor="@color/color_white"
+                    android:textSize="15sp"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

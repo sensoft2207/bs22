@@ -1,3 +1,4 @@
+/*
 package com.mxi.buildsterapp.adapter;
 
 import android.content.Context;
@@ -9,8 +10,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.GlideDrawable;
+import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.target.Target;
 import com.mxi.buildsterapp.R;
 import com.mxi.buildsterapp.model.TradWorkerData;
 import com.mxi.buildsterapp.model.TradeWorkerPinData;
@@ -35,7 +41,11 @@ public class TradeWorkerPinAdapter extends RecyclerView.Adapter<TradeWorkerPinAd
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         ImageView iv_worker_pic,iv_pin;
+
         TextView tv_worker_name;
+
+        ProgressBar progressBar;
+
         public MyViewHolder(View view) {
             super(view);
 
@@ -43,6 +53,7 @@ public class TradeWorkerPinAdapter extends RecyclerView.Adapter<TradeWorkerPinAd
             iv_worker_pic =(ImageView) view.findViewById(R.id.iv_worker_pic);
             iv_pin =(ImageView) view.findViewById(R.id.iv_pin);
             tv_worker_name =(TextView) view.findViewById(R.id.tv_worker_name);
+            progressBar =(ProgressBar) view.findViewById(R.id.progress);
         }
     }
 
@@ -60,18 +71,36 @@ public class TradeWorkerPinAdapter extends RecyclerView.Adapter<TradeWorkerPinAd
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
 
-        holder.iv_worker_pic.setImageResource(workerList.get(position).imageId);
+        TradeWorkerPinData td = workerList.get(position);
+
+        holder.tv_worker_name.setText(td.getFirstname()+" "+td.getLastname());
+
+        Glide.with(context).load(td.getProfile_image()).
+                listener(new RequestListener<String, GlideDrawable>() {
+                    @Override
+                    public boolean onException(Exception e, String model, Target<GlideDrawable> target, boolean isFirstResource) {
+
+                        holder.progressBar.setVisibility(View.GONE);
+
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onResourceReady(GlideDrawable resource, String model, Target<GlideDrawable> target, boolean isFromMemoryCache, boolean isFirstResource) {
+
+                        holder.progressBar.setVisibility(View.GONE);
+
+                        return false;
+                    }
+                }).into(holder.iv_worker_pic);
+
+
+       */
+/* holder.iv_worker_pic.setImageResource(workerList.get(position).imageId);
         holder.iv_pin.setImageResource(workerList.get(position).imageIdPin);
         holder.tv_worker_name.setText(workerList.get(position).txt);
+*//*
 
-        holder.iv_worker_pic.setOnClickListener(new View.OnClickListener() {
-            @Override
-
-            public void onClick(View v) {
-                String list = workerList.get(position).txt.toString();
-            }
-
-        });
 
     }
 
@@ -91,5 +120,8 @@ public class TradeWorkerPinAdapter extends RecyclerView.Adapter<TradeWorkerPinAd
 
         return size.x;
     }
+
+
 }
 
+*/

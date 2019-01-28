@@ -31,6 +31,7 @@
                 android:tint="@color/color_blue"/>
 
             <com.mxi.buildsterapp.widget.MyTextviewBold
+                android:id="@+id/tv_project_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/p_title"

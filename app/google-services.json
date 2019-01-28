@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "99684245295",
+    "firebase_url": "https://buildsterapp-2aed0.firebaseio.com",
+    "project_id": "buildsterapp-2aed0",
+    "storage_bucket": "buildsterapp-2aed0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:99684245295:android:2b4758ff6e983165",
+        "android_client_info": {
+          "package_name": "com.mxi.buildsterapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "99684245295-j0i2i73sesq36emgiduomq8ahpagulr9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9WeyqKSjBD27WCHlDqjwydzGvVl_WSFo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

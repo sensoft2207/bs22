@@ -2,15 +2,14 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="15dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="220dp"
-        android:paddingTop="20dp"
-        android:paddingLeft="50dp"
-        android:paddingRight="50dp"
+        android:layout_height="240dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
         android:paddingBottom="10dp">
 
 
@@ -22,42 +21,126 @@
                 android:id="@+id/iv_back"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="fitXY"
-                android:padding="5dp"/>
+                android:scaleType="fitXY"/>
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/frame"/>
 
+            <ProgressBar
+                android:id="@+id/progress"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible"
+                android:padding="50dp"/>
+
             <LinearLayout
+                android:id="@+id/ln_view_screen"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="3"
-                    android:gravity="center">
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:background="#99006CA6"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp">
 
-                    <com.mxi.buildsterapp.widget.MyTextviewBold
-                        android:id="@+id/tv_project_name"
-                        android:layout_width="match_parent"
+                    <LinearLayout
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="My Project"
-                        android:gravity="center"
-                        android:textColor="@color/color_white"
-                        android:textSize="25sp"/>
+                        android:layout_weight="2">
 
+                        <com.mxi.buildsterapp.widget.MyTextviewBold
+                            android:id="@+id/tv_project_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="My Project"
+                            android:gravity="center"
+                            android:textColor="@color/color_white"
+                            android:textSize="20sp"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:background="#00AFFB"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            android:layout_margin="5dp">
+
+                            <com.mxi.buildsterapp.widget.MyTextviewLight
+                                android:id="@+id/tv_my_pins"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:gravity="center"
+                                android:textColor="@color/color_white"
+                                android:textSize="13sp"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:background="#009831"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            android:layout_margin="5dp">
+
+                            <com.mxi.buildsterapp.widget.MyTextviewLight
+                                android:id="@+id/tv_assigned_pins"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:gravity="center"
+                                android:textColor="@color/color_white"
+                                android:textSize="13sp"/>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:background="#B900F9"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            android:layout_margin="5dp">
+
+                            <com.mxi.buildsterapp.widget.MyTextviewLight
+                                android:id="@+id/tv_awaiting_pins"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:gravity="center"
+                                android:textColor="@color/color_white"
+                                android:textSize="13sp"/>
+
+
+                        </LinearLayout>
+                    </LinearLayout>
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="2"
-                    android:orientation="horizontal">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="50dp">
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -73,7 +156,7 @@
                         android:padding="10dp">
 
                         <LinearLayout
-                            android:id="@+id/ln_view_screen"
+                            android:id="@+id/ln_edit_screen"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:gravity="center"
@@ -82,7 +165,9 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/ic_view"/>
+                                android:src="@drawable/edit_screen"
+                                android:tint="@color/color_white"
+                                android:padding="8dp"/>
 
 
                         </LinearLayout>
@@ -138,19 +223,24 @@
 
                 </LinearLayout>
 
+
             </LinearLayout>
 
         </FrameLayout>
 
     </LinearLayout>
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="130dp">
+        android:layout_height="130dp"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:visibility="gone">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:paddingTop="30dp">
 
 
             <LinearLayout
@@ -169,31 +259,88 @@
                 android:gravity="center|top|right">
 
                 <LinearLayout
+                    android:id="@+id/ln_project_message"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:gravity="center"
                     android:elevation="10dp"
                     android:orientation="vertical"
                     android:layout_marginRight="15dp"
-                    android:visibility="invisible"
                     android:background="@drawable/red_circle">
+
+                    <com.mxi.buildsterapp.widget.MyTextviewBold
+                        android:id="@+id/tv_project_message"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12"
+                        android:textColor="@color/color_white"/>
 
 
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/ln_def_pending"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:gravity="center"
                     android:elevation="10dp"
                     android:orientation="vertical"
-                    android:layout_marginRight="70dp"
+                    android:layout_marginRight="30dp"
                     android:background="@drawable/yellow_circle">
 
                     <com.mxi.buildsterapp.widget.MyTextviewBold
+                        android:id="@+id/tv_def_pending"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="12"
+                        android:text="0"
+                        android:textColor="@color/color_white"/>
+
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="10dp">
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center|top|right">
+
+
+                <LinearLayout
+                    android:id="@+id/ln_project_approved"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:elevation="10dp"
+                    android:orientation="vertical"
+                    android:layout_marginRight="25dp"
+                    android:background="@drawable/green_circle">
+
+                    <com.mxi.buildsterapp.widget.MyTextviewBold
+                        android:id="@+id/tv_project_approved"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
                         android:textColor="@color/color_white"/>
 
 
@@ -206,6 +353,6 @@
         </LinearLayout>
 
 
-    </LinearLayout>
+    </FrameLayout>
 
 </FrameLayout>

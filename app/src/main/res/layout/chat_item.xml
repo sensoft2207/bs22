@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_user1_chat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="80dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="6"
+                android:orientation="vertical"
+                android:background="@drawable/message_back">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <FrameLayout
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.mxi.buildsterapp.widget.MyTextviewBold
+                            android:id="@+id/tv_user1_name"
+                            android:layout_gravity="left"
+                            android:layout_marginLeft="10dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/color_white"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" />
+
+
+                        <com.mxi.buildsterapp.widget.MyTextviewLight
+                            android:layout_marginRight="20dp"
+                            android:layout_gravity="right"
+                            android:textSize="11sp"
+                            android:id="@+id/tv_user1_time"
+                            android:text="05:30"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textColor="@color/color_white"/>
+
+                    </FrameLayout>
+                </LinearLayout>
+
+                <com.mxi.buildsterapp.widget.MyTextviewLight
+                    android:id="@+id/tv_user1_chat_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textColor="@color/color_white"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="-15dp"
+                android:layout_marginTop="6.5dp"
+                android:layout_weight="1"
+                android:src="@drawable/arrow_bg2"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:id="@+id/ll_user2_chat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingRight="80dp">
+
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="-15dp"
+                android:layout_marginTop="6.5dp"
+                android:layout_weight="1"
+                android:src="@drawable/arrow_bg1"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="6"
+                android:orientation="vertical"
+                android:background="@drawable/grid_border">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <FrameLayout
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/tv_user2_name"
+                            android:layout_gravity="left"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:layout_marginLeft="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" />
+
+
+                        <com.mxi.buildsterapp.widget.MyTextviewLight
+                            android:textSize="11sp"
+                            android:id="@+id/tv_user2_time"
+                            android:layout_marginRight="10dp"
+                            android:layout_gravity="right"
+                            android:layout_marginLeft="10dp"
+                            android:text="05:30"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" />
+
+                    </FrameLayout>
+                </LinearLayout>
+                <com.mxi.buildsterapp.widget.MyTextviewLight
+                    android:id="@+id/tv_user2_chat_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textColor="#000" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+</LinearLayout>

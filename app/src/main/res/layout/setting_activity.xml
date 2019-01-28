@@ -53,19 +53,24 @@
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:id="@+id/ln_change_photo"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:layout_gravity="center"
                     android:orientation="vertical"
                     android:paddingTop="10dp">
 
-                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
                         android:id="@+id/iv_worker_pic"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/student"
-                        app:civ_border_color="@color/color_blue"
-                        app:civ_border_width="2dp" />
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/ic_add_profile"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="@color/color_blue"/>
+
 
                     <com.mxi.buildsterapp.widget.MyTextviewLight
                         android:layout_width="wrap_content"
@@ -142,7 +147,9 @@
                             android:singleLine="true"
                             android:textColor="@color/color_blue"
                             android:textColorHint="@color/color_blue"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:editable="false"
+                            android:focusable="false"/>
 
                     </android.support.design.widget.TextInputLayout>
 

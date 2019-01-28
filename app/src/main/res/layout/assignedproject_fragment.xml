@@ -5,6 +5,7 @@
     android:orientation="vertical">
 
     <LinearLayout
+        android:id="@+id/ln_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="20dp"
@@ -32,6 +33,7 @@
                     android:hint="@string/search_here"
                     android:textColorHint="@color/color_blue"
                     android:textColor="@color/color_blue"
+                    android:singleLine="true"
                     android:background="@android:color/transparent"/>
 
             </LinearLayout>
@@ -53,15 +55,55 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/rc_assigned_project"
+        <LinearLayout
+            android:id="@+id/ln_no_projects"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:visibility="invisible">
 
-    </LinearLayout>
+            <com.mxi.buildsterapp.widget.MyTextviewBold
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No Projects"
+                android:textSize="25sp"
+                android:textColor="@color/color_blue"/>
+
+        </LinearLayout>
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/sw_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rc_assigned_project"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="invisible"/>
+
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <ProgressBar
+                android:id="@+id/progress"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible"
+                android:padding="120dp"/>
+
+        </LinearLayout>
+
+
+    </FrameLayout>
 
 </LinearLayout>
